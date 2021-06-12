@@ -1,0 +1,23 @@
+{
+  "name": "dropbox-oauth",
+  "version": "1.0.0",
+  "description": "authentication using dropbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshushub/dropbox-OAuth.git"
+  },
+  "author": "himanshushub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himanshushub/dropbox-OAuth/issues"
+  },
+  "homepage": "https://github.com/himanshushub/dropbox-OAuth#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
