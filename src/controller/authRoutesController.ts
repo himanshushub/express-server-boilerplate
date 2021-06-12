@@ -1,5 +1,5 @@
-function authenticate(req, res, next) {}
+import { Request, Response, NextFunction } from "express";
 
-module.exports = {
-  authenticate: authenticate,
-};
+export function authenticate(req: Request, res: Response, next: NextFunction) {
+  res.send({ auth: "authentiation called" });
+}

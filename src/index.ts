@@ -1,6 +1,5 @@
-// const express = require("express");
 import express from "express";
-// const authRoutes = require("./routes/authRoutes");
+import authRoutes from "./routes/authRoutes";
 
 const app = express();
 
@@ -13,10 +12,10 @@ const app = express();
 
 app.use(express.json());
 
-// authRoutes(app);
+authRoutes(app);
 
 app.get("/", (req, res) => {
-  res.send({ hi: "there from express server" });
+  res.send({ hi: "there from express server powered with ts" });
 });
 
 const PORT = process.env.PORT || 5000;

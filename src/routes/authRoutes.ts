@@ -1,6 +1,11 @@
-const requireLogin = require("../middlewares/requireLogin");
-const authRoutesController = require("../controller/authRoutesController");
+import requireLogin from "../middlewares/requireLogin";
+import { authenticate } from "../controller/authRoutesController";
+import { Express } from "express";
 
-module.exports = (app) => {
-  app.post("/api/authRoutes", requireLogin, authRoutesController.authenticate);
+export default (app: Express) => {
+  app.post(
+    "/api/authRoutes",
+    //  requireLogin,
+    authenticate
+  );
 };
