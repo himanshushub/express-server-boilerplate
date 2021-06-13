@@ -1,5 +1,6 @@
+require("module-alias/register");
 import express from "express";
-import authRoutes from "./routes/authRoutes";
+import authRoutes from "routes/authRoutes";
 
 const app = express();
 

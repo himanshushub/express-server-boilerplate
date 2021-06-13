@@ -1,5 +1,5 @@
-import requireLogin from "../middlewares/requireLogin";
-import { authenticate } from "../controller/authRoutesController";
+// import requireLogin from "middlewares/requireLogin";
+import { authenticate } from "controller/authRoutesController";
 import { Express } from "express";
 
 export default (app: Express) => {
