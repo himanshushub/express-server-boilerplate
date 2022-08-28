@@ -1,8 +1,11 @@
 {
   "name": "dropbox-oauth",
   "version": "1.0.0",
-  "description": "authentication using dropbox",
+  "description": "express server powered with typescript",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -r tsconfig-paths/register ./src/index.ts"
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "@types/node": "^15.12.2",
+    "nodemon": "^2.0.19",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.3.2"
