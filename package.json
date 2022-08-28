@@ -22,7 +22,8 @@
   "homepage": "https://github.com/himanshushub/dropbox-OAuth#readme",
   "dependencies": {
     "@types/express": "^4.17.12",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.5.3"
   },
   "devDependencies": {
     "@types/node": "^15.12.2",
