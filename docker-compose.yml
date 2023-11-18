@@ -4,5 +4,36 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    command: npm run start
+    depends_on:
+      - mongo
+    # networks:
+    #   - express
+    # links:
+    #   - mongo
+    volumes:
+      - ./src:/usr/src/app/src
     ports:
-      - 80:5000
+      - 5000:5000
+  mongo:
+    image: mongo:6
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./db:/data/db
+    # networks:
+    #   - express
+    ports:
+      - 27018:27017
+# networks:
+#   express:
+# volumes:
+#   mongo-db:
+
+  mon:
+    image: mongo:latest
+    ports: 
+      - "27017:27017"
+    volumes: 
+      - ./data:/data/db:rw
