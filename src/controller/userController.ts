@@ -1,10 +1,14 @@
 import { Request, Response, NextFunction } from "express";
+import * as userService from "services/userService";
 
 export function getUser(req: Request, res: Response, next: NextFunction) {
-  res.send("get user called");
+  const user = userService.getUser();
+  res.send(user);
 }
 
 export function createUser(req: Request, res: Response, next: NextFunction) {
-  res.send("create user called");
+  const user = userService.createUser();
+
+  res.send(user);
 }
 
