@@ -4,5 +4,32 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    command: npm run start
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_PORT: 57452
+      POSTGRES_DB: enigma_db
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
     ports:
-      - 80:5000
+      - 5000:5000
+
+  postgres:
+    image: postgres:16
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - POSTGRES_DB=enigma_db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - pg-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+
+volumes:
+  pg-data:
