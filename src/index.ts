@@ -1,6 +1,10 @@
 import express from "express";
 import authRoutes from "routes/authRoutes";
 import userRoutes from "routes/userRoutes";
+import Knex from 'knex';
+import config from './knex/knexfile';
+
+const knex = Knex(config);
 
 const app = express();
 
@@ -9,8 +13,9 @@ app.use(express.json());
 authRoutes(app);
 userRoutes(app);
 
-app.use("/", (req, res) => {
-  res.send("Server running");
+app.use("/", async(req, res) => {
+  let result = await knex("demo").where({isSaved: true});
+  res.send(result);
 });
 
 const PORT = process.env.PORT || 8080;
