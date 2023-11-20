@@ -1,6 +1,6 @@
 FROM node:16-alpine
 
-EXPOSE 5000
+EXPOSE 8080
 ENV APP=/usr/src/app
 WORKDIR $APP
 
