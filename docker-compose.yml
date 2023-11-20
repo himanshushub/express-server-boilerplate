@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: npm run start
+    command: npm run app
     depends_on:
       - postgres
     environment:
@@ -16,7 +16,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./src:/usr/src/app/src
+      - ./:/usr/src/app
 
   postgres:
     image: postgres:16
