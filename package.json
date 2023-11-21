@@ -10,8 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "nodemon -L -r tsconfig-paths/register ./src/index.ts",
     "start": "docker compose down && docker compose up",
-    "migrate": "docker exec -it express-server-boilerplate-api-1 /bin/sh -c 'node_modules/.bin/knex migrate:latest'",
-    "seed": "docker exec -it express-server-boilerplate-api-1 /bin/sh -c 'node_modules/.bin/knex seed:run'"
+    "migrate": "docker exec -it express-server-boilerplate-api-1 /bin/sh -c \"node_modules/.bin/knex migrate:latest\"",
+    "seed": "docker exec -it express-server-boilerplate-api-1 /bin/sh -c \"node_modules/.bin/knex seed:run\""
   },
   "repository": {
     "type": "git",

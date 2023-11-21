@@ -1,8 +1,8 @@
 import express from "express";
 import authRoutes from "routes/authRoutes";
 import userRoutes from "routes/userRoutes";
-import Knex from 'knex';
-import config from '../knexfile';
+import Knex from "knex";
+import config from "../knexfile";
 
 const knex = Knex(config);
 
@@ -13,8 +13,8 @@ app.use(express.json());
 authRoutes(app);
 userRoutes(app);
 
-app.use("/", async(req, res) => {
-  let result = await knex("demo").where({isSaved: true});
+app.use("/", async (req, res) => {
+  let result = await knex("users").first();
   res.send(result);
 });
 
