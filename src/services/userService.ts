@@ -1,7 +1,8 @@
+import * as UserModel from "models/userModel";
 
-export const getUser = () => {
+export const getUsers = async () => {
   // call the db models and return response
-  return "user is found and mocked";
+  return UserModel.getUsers()
 };
 
 export const createUser = () => {
