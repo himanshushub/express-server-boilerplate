@@ -2,7 +2,7 @@ import express from "express";
 import authRoutes from "routes/authRoutes";
 import userRoutes from "routes/userRoutes";
 import Knex from 'knex';
-import config from './knex/knexfile';
+import config from '../knexfile';
 
 const knex = Knex(config);
 
